@@ -1,21 +1,68 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSRT - Prototype</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSRT — Prototype</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <header class="navbar">
-    <a href="dashboard.html" class="back-btn">← Kembali</a>
-    <h1>Prototype DSRT</h1>
+  <header class="nav">
+    <div class="nav-left">
+      <img src="assets/logo-dsrt.png" alt="DSRT" class="logo" />
+    </div>
+    <div class="nav-right">
+      <a class="btn-ghost" href="dashboard.html">← Dashboard</a>
+      <a class="btn-ghost" href="index.html">Home</a>
+    </div>
   </header>
 
-  <section class="content">
-    <p>Halaman prototype (placeholder slider restorasi).</p>
-  </section>
+  <main class="container prototype-main">
+    <h1>Prototype — Restorasi (Mock)</h1>
+    <p class="muted">Demo UI: slider membagi tiga area (asli — terkunci — blur).</p>
 
+    <div class="proto-uploader card">
+      <label class="lbl">Upload Foto (Demo)</label>
+      <input type="file" accept="image/*" id="proto-upload" />
+      <button id="proto-process" class="btn-primary">Proses Restorasi (Demo)</button>
+      <p class="muted">*Pada demo ini file tidak di-upload ke server. Hanya preview UI.</p>
+    </div>
+
+    <div class="card proto-preview">
+      <h3>Preview Slider</h3>
+      <div class="slider">
+        <div class="slice left" id="slice-left"></div>
+        <div class="slice mid" id="slice-mid"><div class="lock-overlay">🔒</div></div>
+        <div class="slice right" id="slice-right"></div>
+      </div>
+      <p class="muted">Kiri = asli, Tengah = preview terkunci (watermark), Kanan = blur.</p>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 DSRT</div>
+  </footer>
+
+  <script>
+    // small client-side preview replacement for prototype (no backend)
+    const upload = document.getElementById('proto-upload');
+    const left = document.getElementById('slice-left');
+    const mid = document.getElementById('slice-mid');
+    const right = document.getElementById('slice-right');
+
+    upload?.addEventListener('change', (ev) => {
+      const f = ev.target.files?.[0];
+      if (!f) return;
+      const url = URL.createObjectURL(f);
+      left.style.backgroundImage = `url(${url})`;
+      mid.style.backgroundImage = `url(${url})`;
+      right.style.backgroundImage = `url(${url})`;
+      // apply blur to right
+      right.style.filter = 'blur(3px)';
+      // mid overlay will show lock (css)
+    });
+
+    document.getElementById('proto-process')?.addEventListener('click', () => alert('Demo: proses restorasi (backend belum terhubung).'));
+  </script>
 </body>
 </html>
