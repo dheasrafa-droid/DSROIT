@@ -1,45 +1,58 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DSRT - Dashboard</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('wallpaper-bunga.jpg') no-repeat center center/cover;
+      color: white;
+    }
+    header {
+      background: rgba(0,0,0,0.3);
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    nav a {
+      color: white;
+      margin-left: 15px;
+      text-decoration: none;
+    }
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 80vh;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 20px;
+      border-radius: 12px;
+      width: 250px;
+      text-align: center;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-
-  <!-- Navbar -->
-  <header class="navbar">
-    <a href="index.html" class="back-btn">← Kembali</a>
-    <h1>Dashboard DSRT</h1>
+  <header>
+    <h2>DSRT Dashboard</h2>
+    <nav>
+      <a href="landing.html">Home</a>
+      <a href="login.html">Logout</a>
+    </nav>
   </header>
-
-  <!-- Grid Fitur -->
-  <section class="dashboard-grid">
-    <div class="feature-card">
-      <img src="assets/icons/restoration.png" alt="Restorasi Foto" class="feature-icon">
-      <h3>Restorasi Foto</h3>
-      <a href="prototype.html" class="cta-btn">Buka</a>
-    </div>
-
-    <div class="feature-card">
-      <img src="assets/icons/payment.png" alt="Pembayaran" class="feature-icon">
-      <h3>Pembayaran</h3>
-      <a href="#" class="cta-btn">Buka</a>
-    </div>
-
-    <div class="feature-card">
-      <img src="assets/icons/settings.png" alt="Pengaturan" class="feature-icon">
-      <h3>Pengaturan</h3>
-      <a href="#" class="cta-btn">Buka</a>
-    </div>
-
-    <div class="feature-card">
-      <img src="assets/icons/help.png" alt="Bantuan" class="feature-icon">
-      <h3>Bantuan</h3>
-      <a href="#" class="cta-btn">Buka</a>
-    </div>
-  </section>
-
+  <div class="content">
+    <div class="card">📷 Restorasi Foto</div>
+    <div class="card">📜 Riwayat</div>
+    <div class="card">⚙️ Pengaturan</div>
+  </div>
 </body>
 </html>
