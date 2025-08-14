@@ -1,64 +1,101 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DSRT — Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSRT Dashboard</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      color: white;
+      min-height: 100vh;
+    }
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 30px;
+      background: #111;
+    }
+    header h2 {
+      margin: 0;
+    }
+    header a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+      padding: 30px;
+    }
+    .card {
+      background: #1f1f1f;
+      padding: 20px;
+      border-radius: 12px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform 0.2s, background 0.3s;
+      position: relative;
+    }
+    .card:hover {
+      transform: scale(1.05);
+      background: #2a2a2a;
+    }
+    .icon {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+    .premium-badge {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: gold;
+      color: black;
+      border-radius: 50%;
+      width: 24px;
+      height: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.8rem;
+      font-weight: bold;
+    }
+  </style>
 </head>
 <body>
-  <header class="nav">
-    <div class="nav-left">
-      <img src="assets/logo-dsrt.png" alt="DSRT" class="logo" />
-    </div>
-    <div class="nav-right">
-      <a href="landing.html" class="btn-ghost">Home</a>
-      <button id="btn-logout" class="btn-login-top">Logout</button>
-    </div>
+  <header>
+    <h2>DSRT</h2>
+    <a href="landing.html">Keluar</a>
   </header>
 
-  <main class="dashboard-main container">
-    <h1>Dashboard DSRT</h1>
-    <p class="muted">Pilih fitur untuk memulai — ini versi kerangka (dummy) untuk pengujian.</p>
-
-    <div class="grid">
-      <div class="card feature-card">
-        <div class="icon">📷</div>
-        <h3>Restorasi Foto</h3>
-        <p class="muted">Proses restorasi foto (demo UI). Klik untuk masuk prototype.</p>
-        <a class="btn-primary" href="prototype.html">Buka</a>
+  <div class="grid">
+    <!-- Manual Tools -->
+    <a href="manual-tools.html" style="text-decoration:none;color:inherit;">
+      <div class="card">
+        <div class="icon">🛠️</div>
+        <h3>Manual Tools</h3>
       </div>
+    </a>
 
-      <div class="card feature-card">
-        <div class="icon">💳</div>
-        <h3>Pembayaran</h3>
-        <p class="muted">Integrasi QRIS / payment (coming soon)</p>
-        <button class="btn-ghost" disabled>Coming Soon</button>
+    <!-- Filter -->
+    <a href="filter.html" style="text-decoration:none;color:inherit;">
+      <div class="card">
+        <div class="icon">🎨</div>
+        <h3>Filter</h3>
+        <div class="premium-badge">💎</div>
       </div>
+    </a>
 
-      <div class="card feature-card">
-        <div class="icon">⚙️</div>
-        <h3>Pengaturan</h3>
-        <p class="muted">Pengaturan akun & preferensi</p>
-        <button class="btn-ghost" disabled>Coming Soon</button>
-      </div>
-
-      <div class="card feature-card">
-        <div class="icon">📜</div>
-        <h3>Riwayat</h3>
-        <p class="muted">Log pemrosesan</p>
-        <button class="btn-ghost" disabled>Coming Soon</button>
-      </div>
+    <!-- Contoh fitur lain -->
+    <div class="card">
+      <div class="icon">🖌️</div>
+      <h3>Brush Tool</h3>
     </div>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">© 2025 DSRT</div>
-  </footer>
-
-  <script>
-    // logout simply go to landing (for demo)
-    document.getElementById('btn-logout')?.addEventListener('click', () => location.href = 'index.html');
-  </script>
+  </div>
 </body>
 </html>
