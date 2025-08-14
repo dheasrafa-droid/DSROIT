@@ -1,58 +1,64 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSRT - Dashboard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: url('wallpaper-bunga.jpg') no-repeat center center/cover;
-      color: white;
-    }
-    header {
-      background: rgba(0,0,0,0.3);
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    nav a {
-      color: white;
-      margin-left: 15px;
-      text-decoration: none;
-    }
-    .content {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 80vh;
-      flex-wrap: wrap;
-      gap: 20px;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 20px;
-      border-radius: 12px;
-      width: 250px;
-      text-align: center;
-      cursor: pointer;
-    }
-  </style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>DSRT — Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header>
-    <h2>DSRT Dashboard</h2>
-    <nav>
-      <a href="landing.html">Home</a>
-      <a href="login.html">Logout</a>
-    </nav>
+  <header class="nav">
+    <div class="nav-left">
+      <img src="assets/logo-dsrt.png" alt="DSRT" class="logo" />
+    </div>
+    <div class="nav-right">
+      <a href="landing.html" class="btn-ghost">Home</a>
+      <button id="btn-logout" class="btn-login-top">Logout</button>
+    </div>
   </header>
-  <div class="content">
-    <div class="card">📷 Restorasi Foto</div>
-    <div class="card">📜 Riwayat</div>
-    <div class="card">⚙️ Pengaturan</div>
-  </div>
+
+  <main class="dashboard-main container">
+    <h1>Dashboard DSRT</h1>
+    <p class="muted">Pilih fitur untuk memulai — ini versi kerangka (dummy) untuk pengujian.</p>
+
+    <div class="grid">
+      <div class="card feature-card">
+        <div class="icon">📷</div>
+        <h3>Restorasi Foto</h3>
+        <p class="muted">Proses restorasi foto (demo UI). Klik untuk masuk prototype.</p>
+        <a class="btn-primary" href="prototype.html">Buka</a>
+      </div>
+
+      <div class="card feature-card">
+        <div class="icon">💳</div>
+        <h3>Pembayaran</h3>
+        <p class="muted">Integrasi QRIS / payment (coming soon)</p>
+        <button class="btn-ghost" disabled>Coming Soon</button>
+      </div>
+
+      <div class="card feature-card">
+        <div class="icon">⚙️</div>
+        <h3>Pengaturan</h3>
+        <p class="muted">Pengaturan akun & preferensi</p>
+        <button class="btn-ghost" disabled>Coming Soon</button>
+      </div>
+
+      <div class="card feature-card">
+        <div class="icon">📜</div>
+        <h3>Riwayat</h3>
+        <p class="muted">Log pemrosesan</p>
+        <button class="btn-ghost" disabled>Coming Soon</button>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">© 2025 DSRT</div>
+  </footer>
+
+  <script>
+    // logout simply go to landing (for demo)
+    document.getElementById('btn-logout')?.addEventListener('click', () => location.href = 'index.html');
+  </script>
 </body>
 </html>
