@@ -1,139 +1,150 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>DSRT — Landing</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>DSRT Studio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      color: white;
+    }
+
+    /* Glass effect */
+    .glass {
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+
+    /* Navbar */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      background: rgba(0,0,0,0.4);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+    header nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+      font-weight: bold;
+    }
+
+    /* Hero */
+    .hero {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 15px;
+    }
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 25px;
+    }
+    .btn-primary {
+      background-color: #ffcb05;
+      color: black;
+      padding: 12px 25px;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+    .btn-primary:hover {
+      background-color: #ffdb4d;
+    }
+
+    /* Fitur */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 50px;
+    }
+    .feature-card {
+      text-align: center;
+    }
+    .feature-card h3 {
+      margin-top: 15px;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(10px);
+      margin-top: 50px;
+    }
+  </style>
 </head>
 <body>
-  <!-- NAVBAR -->
-  <header class="nav">
-    <div class="nav-left">
-      <img src="assets/logo-dsrt.png" alt="DSRT" class="logo" />
-    </div>
-    <div class="nav-right">
-      <button id="btn-login-open" class="btn-login-top">Login</button>
-    </div>
+
+  <!-- Navbar -->
+  <header>
+    <div class="logo"><strong>DSRT</strong> Studio</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#features">Fitur</a>
+      <a href="#about">Tentang</a>
+      <a href="#contact">Kontak</a>
+      <a href="#login">Login</a>
+    </nav>
   </header>
 
-  <!-- HERO -->
-  <main class="hero">
-    <div class="hero-inner">
-      <h1 class="hero-title">Restorasi Foto — Natural & Detail</h1>
-      <p class="hero-sub">Kembalikan kenanganmu tanpa menghilangkan tekstur, warna, atau karakter asli foto.</p>
-      <div class="hero-cta">
-        <a class="btn-primary" href="dashboard.html">Mulai Restorasi</a>
-        <a class="btn-ghost" href="prototype.html">Lihat Prototype</a>
-      </div>
-    </div>
-  </main>
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>DSRT Studio – Semua Alat Kreatif dalam Satu Platform</h1>
+    <p>Manfaatkan teknologi AI & manual tools untuk mengedit, membuat, dan mengelola proyek kreatif Anda dengan mudah dan cepat.</p>
+    <a href="#features" class="btn-primary">Cobalah Sekarang</a>
+  </section>
 
-  <!-- BAWAH/LANDINGS SECTIONS -->
-  <section class="section about">
-    <div class="container">
-      <h2>Tentang DSRT</h2>
-      <p>DSRT adalah platform restorasi foto dengan fokus pada hasil yang natural, kecepatan proses, dan privasi pengguna. Pratinjau hasil diberi watermark dan area tersembunyi untuk menjaga privasi.</p>
+  <!-- Fitur Unggulan -->
+  <section id="features" class="features">
+    <div class="glass feature-card">
+      <h2>🎨 Editor Kreatif</h2>
+      <p>Edit foto, video, dan desain grafis dengan kontrol penuh.</p>
+    </div>
+    <div class="glass feature-card">
+      <h2>🤖 AI Asisten</h2>
+      <p>Generasi otomatis gambar, teks, dan efek.</p>
+    </div>
+    <div class="glass feature-card">
+      <h2>⚡ Proses Cepat</h2>
+      <p>Semua fitur bekerja langsung di browser tanpa install.</p>
+    </div>
+    <div class="glass feature-card">
+      <h2>🛠️ Kontrol Manual</h2>
+      <p>Atur detail, warna, dan efek sesuai keinginan.</p>
+    </div>
+    <div class="glass feature-card">
+      <h2>☁️ Penyimpanan Aman</h2>
+      <p>Proyek tersimpan di cloud, akses kapan saja.</p>
     </div>
   </section>
 
-  <section class="section features">
-    <div class="container">
-      <h2>Fitur Unggulan</h2>
-      <div class="grid">
-        <div class="card">
-          <div class="icon">🎨</div>
-          <h4>Kualitas Natural</h4>
-          <p>Hasil halus tanpa efek plastik berlebihan.</p>
-        </div>
-        <div class="card">
-          <div class="icon">🔒</div>
-          <h4>Preview Terkunci</h4>
-          <p>Pratinjau terkunci dengan watermark DSRT untuk privasi.</p>
-        </div>
-        <div class="card">
-          <div class="icon">⚡</div>
-          <h4>Proses Cepat</h4>
-          <p>Diproses cepat, cocok untuk batch kecil hingga menengah.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section steps">
-    <div class="container">
-      <h2>Cara Kerja</h2>
-      <div class="grid steps-grid">
-        <div class="step card">1. Upload foto</div>
-        <div class="step card">2. Proses restorasi otomatis</div>
-        <div class="step card">3. Download setelah pembayaran</div>
-      </div>
-    </div>
-  </section>
-
-  <footer class="site-footer">
-    <div class="container">
-      <div class="footer-left">© 2025 DSRT</div>
-      <div class="footer-right">
-        <a href="#" target="_blank">Instagram</a> · <a href="#">Syarat & Ketentuan</a>
-      </div>
-    </div>
+  <!-- Footer -->
+  <footer>
+    <p>© 2025 DSRT Studio. Semua Hak Dilindungi.</p>
   </footer>
 
-  <!-- LOGIN / REGISTER / FORGOT MODAL (SINGLE MODAL, SWITCH KONTEN) -->
-  <div id="modal-overlay" class="modal-overlay" aria-hidden="true">
-    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-      <!-- header of modal -->
-      <div class="modal-head">
-        <h3 id="modal-title">Login DSRT</h3>
-        <button id="modal-close" class="modal-close" aria-label="Close">✕</button>
-      </div>
-
-      <!-- LOGIN FORM -->
-      <div id="modal-login" class="modal-content active">
-        <label class="lbl">Email :</label>
-        <input id="login-email" class="input" type="email" placeholder="nama@contoh.com" required />
-        <label class="lbl">Password :</label>
-        <input id="login-password" class="input" type="password" placeholder="••••••••" required />
-        <button id="modal-login-submit" class="btn-primary full">Login</button>
-
-        <div class="modal-links">
-          <a href="#" id="open-forgot">Forgot Password</a>
-          <a href="#" id="open-register">Register</a>
-        </div>
-      </div>
-
-      <!-- REGISTER FORM -->
-      <div id="modal-register" class="modal-content">
-        <label class="lbl">Nama :</label>
-        <input id="reg-name" class="input" type="text" placeholder="Nama lengkap" />
-        <label class="lbl">Email :</label>
-        <input id="reg-email" class="input" type="email" placeholder="nama@contoh.com" />
-        <label class="lbl">Password :</label>
-        <input id="reg-pass" class="input" type="password" placeholder="Minimal 8 karakter" />
-        <label class="lbl">Konfirmasi Password :</label>
-        <input id="reg-pass2" class="input" type="password" placeholder="Ulangi password" />
-        <button id="modal-register-submit" class="btn-primary full">Daftar</button>
-
-        <div class="modal-links">
-          <a href="#" id="back-to-login-from-reg">Sudah punya akun? Login</a>
-        </div>
-      </div>
-
-      <!-- FORGOT FORM -->
-      <div id="modal-forgot" class="modal-content">
-        <label class="lbl">Email :</label>
-        <input id="forgot-email" class="input" type="email" placeholder="nama@contoh.com" />
-        <button id="modal-forgot-submit" class="btn-primary full">Kirim Link Reset</button>
-
-        <div class="modal-links">
-          <a href="#" id="back-to-login-from-forgot">Kembali ke Login</a>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
-  <script src="script.js"></script>
 </body>
 </html>
