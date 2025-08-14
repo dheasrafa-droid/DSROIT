@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSRT Sign Up</title>
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+const supabaseUrl = 'https://rahhhdsftzglqcpoyzoq.supabase.co'
+const supabaseKey = 'sb_publishable_sNPlskS6PEOQp2P-IY4zAw_3UWG5NIp'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function signUpEmail() {
+  const email = document.getElementById('email').value
+  const password = document.getElementById('password').value
+  const { data, error } = await supabase.auth.signUp({ email, password })
+  if(error) alert(error.message)
+  else {
+    alert('Sign Up berhasil!')
+    location.href='login.html'
+  }
+}
+
+async function signUpPhone() {
+  const phone = document.getElementById('phone').value
+  const password = document.getElementById('phonePassword').value
+  const { data, error } = await supabase.auth.signUp({ phone, password })
+  if(error) alert(error.message)
+  else {
+    alert('Sign Up berhasil!')
+    location.href='login.html'
+  }
+}
+
+window.signUpEmail = signUpEmail
+window.signUpPhone = signUpPhone
+</script>
+</head>
+<body>
+<h1>DSRT Sign Up</h1>
+
+<h3>Sign Up via Email</h3>
+<input id="email" placeholder="Email"><br>
+<input id="password" type="password" placeholder="Password"><br>
+<button onclick="signUpEmail()">Sign Up Email</button>
+
+<h3>Sign Up via Phone</h3>
+<input id="phone" placeholder="Phone +62xxx"><br>
+<input id="phonePassword" type="password" placeholder="Password"><br>
+<button onclick="signUpPhone()">Sign Up Phone</button>
+
+</body>
+</html>
