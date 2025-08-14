@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DSRT Dashboard</title>
+<script type="module">
+import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js/+esm'
+
+const supabaseUrl = 'https://rahhhdsftzglqcpoyzoq.supabase.co'
+const supabaseKey = 'sb_publishable_sNPlskS6PEOQp2P-IY4zAw_3UWG5NIp'
+const supabase = createClient(supabaseUrl, supabaseKey)
+
+async function fetchUsers() {
+  const { data, error } = await supabase.from('users').select('*')
+  if(error) alert(error.message)
+  else {
+    const list = document.getElementById('userList')
+    list.innerHTML = data.map(u => `<li>${u.email || u.phone}</li>`).join('')
+  }
+}
+
+async function fetchPublicFile() {
+  const filePath = 'my-bucket/sample.jpg' // ganti sesuai bucket & file kamu
+  const { data } = supabase.storage.from('my-bucket').getPublicUrl(filePath)
+  const img = document.getElementById('publicImage')
+  img.src = data.publicUrl
+}
+
+window.fetchUsers = fetchUsers
+window.fetchPublicFile = fetchPublicFile
+</script>
+</head>
+<body>
+<h1>DSRT Dashboard</h1>
+<h3>Users Table</h3>
+<button onclick="fetchUsers()">Load Users</button>
+<ul id="userList"></ul>
+
+<h3>Public Storage File</h3>
+<button onclick="fetchPublicFile()">Show File</button>
+<img id="publicImage" width="200" style="display:block; margin-top:10px;">
+</body>
+</html>
