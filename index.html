@@ -1,150 +1,73 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>DSRT Studio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSRT - Digital Smart Revise Technology</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
       color: white;
-    }
-
-    /* Glass effect */
-    .glass {
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(10px);
-      border-radius: 12px;
-      padding: 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-    }
-
-    /* Navbar */
-    header {
-      position: fixed;
-      top: 0;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 15px 30px;
-      background: rgba(0,0,0,0.4);
-      backdrop-filter: blur(10px);
-      z-index: 1000;
-    }
-    header nav a {
-      color: white;
-      text-decoration: none;
-      margin-left: 20px;
-      font-weight: bold;
-    }
-
-    /* Hero */
-    .hero {
-      height: 100vh;
       display: flex;
       flex-direction: column;
-      justify-content: center;
+      min-height: 100vh;
       align-items: center;
-      text-align: center;
-      padding: 0 20px;
+      justify-content: center;
     }
-    .hero h1 {
-      font-size: 2.5rem;
-      margin-bottom: 15px;
+    header {
+      position: absolute;
+      top: 20px;
+      right: 30px;
     }
-    .hero p {
-      max-width: 600px;
-      margin-bottom: 25px;
-    }
-    .btn-primary {
-      background-color: #ffcb05;
-      color: black;
-      padding: 12px 25px;
-      border-radius: 8px;
-      font-weight: bold;
+    header a {
+      color: white;
       text-decoration: none;
-      transition: 0.3s;
+      font-weight: bold;
+      background: #333;
+      padding: 8px 14px;
+      border-radius: 6px;
+      transition: background 0.3s;
     }
-    .btn-primary:hover {
-      background-color: #ffdb4d;
+    header a:hover {
+      background: #555;
     }
-
-    /* Fitur */
-    .features {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 20px;
-      padding: 50px;
+    h1 {
+      font-size: 4rem;
+      margin-bottom: 0.5rem;
     }
-    .feature-card {
-      text-align: center;
+    p {
+      font-size: 1.2rem;
+      color: #ccc;
+      margin-bottom: 2rem;
     }
-    .feature-card h3 {
-      margin-top: 15px;
+    .btn-main {
+      background: #0077ff;
+      color: white;
+      padding: 14px 28px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
     }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background: rgba(0,0,0,0.6);
-      backdrop-filter: blur(10px);
-      margin-top: 50px;
+    .btn-main:hover {
+      background: #005fcc;
     }
   </style>
 </head>
 <body>
-
-  <!-- Navbar -->
   <header>
-    <div class="logo"><strong>DSRT</strong> Studio</div>
-    <nav>
-      <a href="#">Home</a>
-      <a href="#features">Fitur</a>
-      <a href="#about">Tentang</a>
-      <a href="#contact">Kontak</a>
-      <a href="#login">Login</a>
-    </nav>
+    <a href="#">Login</a>
   </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <h1>DSRT Studio – Semua Alat Kreatif dalam Satu Platform</h1>
-    <p>Manfaatkan teknologi AI & manual tools untuk mengedit, membuat, dan mengelola proyek kreatif Anda dengan mudah dan cepat.</p>
-    <a href="#features" class="btn-primary">Cobalah Sekarang</a>
-  </section>
-
-  <!-- Fitur Unggulan -->
-  <section id="features" class="features">
-    <div class="glass feature-card">
-      <h2>🎨 Editor Kreatif</h2>
-      <p>Edit foto, video, dan desain grafis dengan kontrol penuh.</p>
-    </div>
-    <div class="glass feature-card">
-      <h2>🤖 AI Asisten</h2>
-      <p>Generasi otomatis gambar, teks, dan efek.</p>
-    </div>
-    <div class="glass feature-card">
-      <h2>⚡ Proses Cepat</h2>
-      <p>Semua fitur bekerja langsung di browser tanpa install.</p>
-    </div>
-    <div class="glass feature-card">
-      <h2>🛠️ Kontrol Manual</h2>
-      <p>Atur detail, warna, dan efek sesuai keinginan.</p>
-    </div>
-    <div class="glass feature-card">
-      <h2>☁️ Penyimpanan Aman</h2>
-      <p>Proyek tersimpan di cloud, akses kapan saja.</p>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <p>© 2025 DSRT Studio. Semua Hak Dilindungi.</p>
-  </footer>
-
+  
+  <div style="text-align: center;">
+    <h1>DSRT</h1>
+    <p>Digital Smart Revise Technology</p>
+    <a href="dashboard-guest.html">
+      <button class="btn-main">Cobalah Sekarang</button>
+    </a>
+  </div>
 </body>
 </html>
