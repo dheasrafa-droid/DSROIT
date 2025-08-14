@@ -3,71 +3,158 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DSRT - Digital Smart Revise Technology</title>
+  <title>DSRT – Digital Smart Revise Technology</title>
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+      background-color: #0e0e0e;
       color: white;
       display: flex;
       flex-direction: column;
       min-height: 100vh;
-      align-items: center;
-      justify-content: center;
     }
+
+    /* Header */
     header {
-      position: absolute;
-      top: 20px;
-      right: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: rgba(20, 20, 20, 0.9);
+      position: sticky;
+      top: 0;
     }
+
+    header h1 {
+      margin: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
     header a {
       color: white;
       text-decoration: none;
-      font-weight: bold;
-      background: #333;
-      padding: 8px 14px;
-      border-radius: 6px;
+      padding: 0.5rem 1rem;
+      border: 1px solid white;
+      border-radius: 8px;
       transition: background 0.3s;
     }
+
     header a:hover {
-      background: #555;
+      background-color: white;
+      color: black;
     }
-    h1 {
-      font-size: 4rem;
+
+    /* Hero Section */
+    .hero {
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
       margin-bottom: 0.5rem;
     }
-    p {
+
+    .hero p {
       font-size: 1.2rem;
       color: #ccc;
       margin-bottom: 2rem;
     }
-    .btn-main {
-      background: #0077ff;
+
+    .hero .cta {
+      background-color: #ff6b00;
       color: white;
-      padding: 14px 28px;
-      font-size: 1rem;
       border: none;
-      border-radius: 8px;
+      padding: 1rem 2rem;
+      font-size: 1rem;
+      border-radius: 25px;
       cursor: pointer;
+      text-decoration: none;
       transition: background 0.3s;
     }
-    .btn-main:hover {
-      background: #005fcc;
+
+    .hero .cta:hover {
+      background-color: #e55e00;
+    }
+
+    /* Fitur Unggulan */
+    .features {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .feature-card {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1rem;
+      margin-top: auto;
+      background-color: rgba(20, 20, 20, 0.9);
+      font-size: 0.9rem;
+      color: #aaa;
     }
   </style>
 </head>
 <body>
+
   <header>
+    <div></div>
+    <h1>DSRT</h1>
     <a href="#">Login</a>
   </header>
-  
-  <div style="text-align: center;">
-    <h1>DSRT</h1>
-    <p>Digital Smart Revise Technology</p>
-    <a href="dashboard-guest.html">
-      <button class="btn-main">Cobalah Sekarang</button>
-    </a>
-  </div>
+
+  <section class="hero">
+    <h2>DSRT – Digital Smart Revise Technology</h2>
+    <p>Solusi modern untuk berbagai kebutuhan pengeditan dan revisi digital Anda.</p>
+    <a href="dashboard-guest.html" class="cta">Cobalah Sekarang</a>
+  </section>
+
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">🛠</div>
+      <h3>Manual Tools</h3>
+      <p>Edit dan sesuaikan secara manual untuk hasil presisi.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Filter</h3>
+      <p>Terapkan filter kreatif dan modern.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✨</div>
+      <h3>AI Enhance</h3>
+      <p>Gunakan AI untuk meningkatkan kualitas foto secara instan.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📐</div>
+      <h3>Layout Designer</h3>
+      <p>Buat tata letak profesional dengan mudah.</p>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 DSRT. All Rights Reserved.
+  </footer>
+
 </body>
 </html>
