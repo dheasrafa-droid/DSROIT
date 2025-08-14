@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DSRT - Landing Page</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <img src="assets/logo.png" alt="DSRT Logo" class="logo">
+    <button id="btnLogin" class="login-btn">Login</button>
+  </header>
+
+  <!-- Landing Content -->
+  <section class="landing">
+    <h1>Selamat Datang di DSRT</h1>
+    <p>Platform restorasi dan fitur digital lainnya.</p>
+    <a href="dashboard.html" class="cta-btn">Mulai Sekarang</a>
+  </section>
+
+  <!-- Modal Login -->
+  <div class="modal" id="loginModal">
+    <div class="modal-content">
+      <h2>Login DSRT</h2>
+      <form>
+        <label>Email :</label>
+        <input type="email" placeholder="Masukkan email" required>
+
+        <label>Password :</label>
+        <input type="password" placeholder="Masukkan password" required>
+
+        <button type="button" class="btn-login">Login</button>
+
+        <div class="links">
+          <a href="#" id="toForgot">Forgot Password</a>
+          <a href="#" id="toRegister">Register</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Register -->
+  <div class="modal" id="registerModal">
+    <div class="modal-content">
+      <h2>Register DSRT</h2>
+      <form>
+        <label>Nama :</label>
+        <input type="text" placeholder="Masukkan nama" required>
+
+        <label>Email :</label>
+        <input type="email" placeholder="Masukkan email" required>
+
+        <label>Password :</label>
+        <input type="password" placeholder="Masukkan password" required>
+
+        <label>Konfirmasi Password :</label>
+        <input type="password" placeholder="Konfirmasi password" required>
+
+        <button type="button" class="btn-login">Daftar</button>
+
+        <div class="links">
+          <a href="#" id="toLoginFromReg">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Modal Forgot Password -->
+  <div class="modal" id="forgotModal">
+    <div class="modal-content">
+      <h2>Lupa Password</h2>
+      <form>
+        <label>Email :</label>
+        <input type="email" placeholder="Masukkan email" required>
+
+        <button type="button" class="btn-login">Kirim Link Reset</button>
+
+        <div class="links">
+          <a href="#" id="toLoginFromForgot">Login</a>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+    </html>
