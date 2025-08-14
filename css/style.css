@@ -8,8 +8,10 @@ body {
 .navbar {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   padding: 10px 20px;
   background: rgba(255,255,255,0.05);
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -24,15 +26,22 @@ body {
   border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1rem;
 }
 
 .landing {
   text-align: center;
-  margin-top: 100px;
+  padding: 50px 20px;
 }
 
 .content {
   padding: 20px;
+  text-align: center;
+}
+
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
 }
 
 .modal {
@@ -51,36 +60,75 @@ body {
   backdrop-filter: blur(10px);
   padding: 20px;
   border-radius: 12px;
-  width: 320px;
+  width: 90%;
+  max-width: 350px;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.modal-content label {
+  font-size: 0.9rem;
 }
 
 .modal-content input {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   margin: 8px 0;
   border: none;
   border-radius: 8px;
   background: rgba(255,255,255,0.2);
   color: white;
+  font-size: 1rem;
+}
+
+.modal-content input::placeholder {
+  color: rgba(255,255,255,0.7);
 }
 
 .btn-login {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   background: #ff7b42;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   color: white;
+  font-size: 1rem;
 }
 
 .links {
   display: flex;
   justify-content: space-between;
   margin-top: 10px;
+  flex-wrap: wrap;
 }
 
 .links a {
   color: white;
-  font-size: 0.9em;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+/* Responsif khusus mobile */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px;
+  }
+
+  .landing h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing p {
+    font-size: 1rem;
+  }
+
+  .login-btn, .cta-btn, .back-btn {
+    font-size: 0.9rem;
+    padding: 7px 12px;
+  }
 }
